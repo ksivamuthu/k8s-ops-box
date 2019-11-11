@@ -69,3 +69,15 @@ Do you want to lint your dockerfile? Hadolint is the superpower lint tool that l
 ```
 hadolint <Dockerfile>
 ```
+
+### Kubebox
+
+Terminal console for Kubernetes. Check memory/cpu, logs of all your pods from the command line.
+
+```bash
+kubebox
+```
+![](https://camo.githubusercontent.com/f657bda0847eeaf09459f6d3c045af177f6c6f28/68747470733a2f2f6173746566616e757474692e6769746875622e696f2f6b756265626f782f6b756265626f782e737667)
+
+
+
