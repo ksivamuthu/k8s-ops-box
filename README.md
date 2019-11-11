@@ -60,6 +60,4 @@ Do you want to lint your dockerfile? Hadolint is the superpower lint tool that l
 
 ```
 hadolint <Dockerfile>
-``
-
-
+```
