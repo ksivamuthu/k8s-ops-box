@@ -1,6 +1,6 @@
 # Kubernetes Ops Box
 
-Kubernetes Ops Box is the docker image with necessary tools for kubernetes operations including build, template, package, lint, analyze and security audit. This Kubernetes Ops Box (#k8s-ops-box) is especially made to do operations in kubernetes that brings set of standards together on develop and managing kubernetes environment.
+Kubernetes Ops Box is the docker image with necessary tools for kubernetes operations including build, template, package, lint, analyze and security audit. This Kubernetes Ops Box is especially made to do operations in kubernetes that brings set of standards together on develop and managing kubernetes environment.
 
 The repository contains three different docker images
 
@@ -22,3 +22,18 @@ The repository contains three different docker images
    ```
    docker pull docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops:latest
    ```
+
+## How to run the image?
+
+1. Run the image with the below command.
+
+ ```bash
+ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops:latest
+ ```
+ 
+2. If you want to connect with EKS, run the image with the below command
+
+```bash
+
+ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube -v /YOUR_LOCAL_FOLDER/.aws:/root/.aws docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks:latest
+```
