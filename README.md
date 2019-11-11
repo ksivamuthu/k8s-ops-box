@@ -125,3 +125,13 @@ Static yamls:
 ```
 kube-score score my-app/*.yaml
 ```
+
+### Kube Audit
+
+kubeaudit is a command line tool to audit Kubernetes clusters for various different security concerns: run the container as a non-root user, use a read only root filesystem, drop scary capabilities, don't add new ones, don't run privileged, ... You get the gist of it and more on that later. 
+
+```
+kubeaudit all
+```
+
+![](https://478h5m1yrfsa3bbe262u7muv-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/kubeaudit_k8s_security.png)
