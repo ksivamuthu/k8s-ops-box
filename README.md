@@ -40,19 +40,41 @@ The repository contains three different docker images
 
 ## Tools
 
+## Build and Ship
+
 ### Docker CLI, Kubectl, KubeAdm
 
 This *k8s-ops-box* includes docker cli, kubectl and kubeadm installed. It still uses host docker to build the images. You've to mount docker.sock when you are running this box to give access to docker-cli to build the images.
+
+### Linting Docker files - Hadolint
+
+Do you want to lint your dockerfile? Hadolint is the superpower lint tool that lints the docker file and suggests the best practices to follow and to avoid security issues.
+
+```
+hadolint <Dockerfile>
+```
+
+### Analyzing Docker Layers - Dive
+
+A most useful tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image.
+
+![](https://github.com/wagoodman/dive/blob/master/.data/demo.gif)
+
+Run the below command to analyze docker layers.
+
+```bash
+dive <image_name>
+```
 
 ### Dev tools
 
 This *k8s-ops-box* comes with necessary dev tools or command line tools that requires kubernetes operations. It has vim editor, jq for JSON parsing, curl for requests, git for version control, unzip/tar for unzipping files and python3/pip installed for basic operations.
 
-### Terraform
+### Infrastructure as code - Terraform
 
 Terraform is the infrastructure-as-code tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
-### Helm
+### Package management  - Helm
 
 Helm is a tool that streamlines installing and managing Kubernetes applications. Think of it like apt/yum/homebrew for Kubernetes.
 
@@ -62,14 +84,6 @@ An integrated shell for working with the Kubernetes CLI is installed in this *k8
 
 ![](https://camo.githubusercontent.com/6dd81f81976c3abf550dddbed8dcc1fa93d86595/687474703a2f2f692e696d6775722e636f6d2f6466656c6b4b722e676966)
 
-### Hadolint
-
-Do you want to lint your dockerfile? Hadolint is the superpower lint tool that lints the docker file and suggests the best practices to follow and to avoid security issues.
-
-```
-hadolint <Dockerfile>
-```
-
 ### Kubebox
 
 Terminal console for Kubernetes. Check memory/cpu, logs of all your pods from the command line.
@@ -78,6 +92,4 @@ Terminal console for Kubernetes. Check memory/cpu, logs of all your pods from th
 kubebox
 ```
 ![](https://camo.githubusercontent.com/f657bda0847eeaf09459f6d3c045af177f6c6f28/68747470733a2f2f6173746566616e757474692e6769746875622e696f2f6b756265626f782f6b756265626f782e737667)
-
-
 
