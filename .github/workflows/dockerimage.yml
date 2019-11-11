@@ -24,7 +24,16 @@ jobs:
       with:
         username: "${{ secrets.GITHUB_USERNAME }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
-        image_name: ksivamuthu/cei-k8s-ops/k8s-ops/eks
+        image_name: ksivamuthu/cei-k8s-ops/k8s-ops:eks
         image_tag: latest
         registry: docker.pkg.github.com
         context: eks
+    - name: Build and push the k8s-ops aks image
+      uses: whoan/docker-build-with-cache-action@master
+      with:
+        username: "${{ secrets.GITHUB_USERNAME }}"
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        image_name: ksivamuthu/cei-k8s-ops/k8s-ops:aks
+        image_tag: latest
+        registry: docker.pkg.github.com
+        context: aks
