@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build and push the Docker image
+    - name: Build and push the k8s-ops image
       uses: whoan/docker-build-with-cache-action@master
       with:
         username: "${{ secrets.GITHUB_USERNAME }}"
@@ -19,3 +19,12 @@ jobs:
         image_tag: latest
         registry: docker.pkg.github.com
         context: base
+    - name: Build and push the k8s-ops eks image
+      uses: whoan/docker-build-with-cache-action@master
+      with:
+        username: "${{ secrets.GITHUB_USERNAME }}"
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        image_name: ksivamuthu/cei-k8s-ops/k8s-ops/eks
+        image_tag: latest
+        registry: docker.pkg.github.com
+        context: eks
