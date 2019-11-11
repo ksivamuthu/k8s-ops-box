@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="120" height=120" src="docs/logo.png"/>
+</p>
+                                                  
 # Kubernetes Ops Box
 
 Kubernetes Ops Box is the docker image with necessary tools for kubernetes operations including build, template, package, lint, analyze and security audit. This Kubernetes Ops Box is especially made to do operations in kubernetes that brings set of standards together on develop and managing kubernetes environment.
