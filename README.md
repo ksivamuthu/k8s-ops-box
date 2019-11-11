@@ -5,7 +5,7 @@ Kubernetes Ops Box is the docker image with necessary tools for kubernetes opera
 The repository contains three different docker images
     
 | Image | URL | Tag | Description |
-| --- | --- |
+| --- | --- | --- | --- |
 | Base | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops | latest | This image contains kubectl, kubeadm, terraform, helm and etc.|
 | EKS | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks | latest | This contains the base tools and AWS CLI to do aws cloud cli operations.|
 | AKS | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-aks | latest | This contains the base tools and Azure CLI to do Azure cloud cli operations.|
