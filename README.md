@@ -10,3 +10,15 @@ The repository contains three different docker images
     * This contains the base tools and AWS CLI to do aws cloud cli operations
 * AKS - k8s-ops:aks
     * This contains the base tools and Azure CLI to do azure cloud cli operations
+
+## How to pull image?
+
+1. Create a github personal access token with read packages permission.
+2. Login in docker using below command.
+   ```
+   docker login -u <github_user_name> -p <personal_access_token>
+   ```
+3. Pull the required images.
+   ```
+   docker pull docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops:latest
+   ```
