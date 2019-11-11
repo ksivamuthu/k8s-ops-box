@@ -2,13 +2,37 @@
 
 Kubernetes Ops Box is the docker image with necessary tools for kubernetes operations including build, template, package, lint, analyze and security audit. This Kubernetes Ops Box is especially made to do operations in kubernetes that brings set of standards together on develop and managing kubernetes environment.
 
-The repository contains three different docker images
+- [Kubernetes Ops Box](#kubernetes-ops-box)
+  - [How to pull image?](#how-to-pull-image)
+  - [How to run the image?](#how-to-run-the-image)
+  - [Tools](#tools)
+  - [Build and Ship](#build-and-ship)
+    - [Docker CLI, Kubectl, KubeAdm](#docker-cli-kubectl-kubeadm)
+    - [Linting Docker files - Hadolint](#linting-docker-files---hadolint)
+    - [Analyzing Docker Layers - Dive](#analyzing-docker-layers---dive)
+    - [Dev tools](#dev-tools)
+  - [Infrastructure as code](#infrastructure-as-code)
+    - [Terraform](#terraform)
+  - [Package management](#package-management)
+    - [Helm](#helm)
+  - [Monitor](#monitor)
+    - [Kube Shell](#kube-shell)
+    - [Kubebox](#kubebox)
+  - [Static analysis / Audit tool](#static-analysis--audit-tool)
+    - [Kube Score](#kube-score)
+    - [Kube Audit](#kube-audit)
+  - [Contributing](#contributing)
+  - [Pull Request Process](#pull-request-process)
+  - [Credits](#credits)
+
+
+The github package registry contains three different docker images
     
-| Image | URL | Tag | Description |
-| --- | --- | --- | --- |
-| Base | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops | latest | This image contains kubectl, kubeadm, terraform, helm and etc.|
-| EKS | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks | latest | This contains the base tools and AWS CLI to do aws cloud cli operations.|
-| AKS | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-aks | latest | This contains the base tools and Azure CLI to do Azure cloud cli operations.|
+| Image | URL                                                      | Tag    | Description                                                                  |
+| ----- | -------------------------------------------------------- | ------ | ---------------------------------------------------------------------------- |
+| Base  | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops     | latest | This image contains kubectl, kubeadm, terraform, helm and etc.               |
+| EKS   | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks | latest | This contains the base tools and AWS CLI to do aws cloud cli operations.     |
+| AKS   | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-aks | latest | This contains the base tools and Azure CLI to do Azure cloud cli operations. |
 
 ## How to pull image?
 
@@ -151,4 +175,3 @@ Please note we have a code of conduct, please follow it in all your interactions
 ## Credits
 
 Credits goes to these all amazing open source tools that helps this kubernetes development lot easiier. This is just the docker box with all useful tools installed. In future, custom script may be added to this box to enhance our kubernetes ops.
-
