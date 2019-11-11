@@ -174,4 +174,4 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Credits
 
-Credits goes to these all amazing open source tools that helps this kubernetes development lot easiier. This is just the docker box with all useful tools installed. In future, custom script may be added to this box to enhance our kubernetes ops.
+Credits go to these all fantastic open-source tools that help this kubernetes development lot easier. This repository is just the docker box with all useful tools installed. In the future, the custom script may be added to this box to enhance our kubernetes ops.
