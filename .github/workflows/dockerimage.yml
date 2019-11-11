@@ -13,8 +13,8 @@ jobs:
     - name: Build and push the Docker image
       uses: whoan/docker-build-with-cache-action@master
       with:
-        username: "${{ secrets.DOCKER_USERNAME }}"
-        password: "${{ secrets.DOCKER_PASSWORD }}"
+        username: "${{ secrets.GITHUB_USERNAME }}"
+        password: "${{ secrets.GITHUB_TOKEN }}"
         image_name: ksivamuthu/k8s-ops
         image_tag: latest
         registry: docker.pkg.github.com
