@@ -8,19 +8,29 @@ Here, we are going to discuss the security best practices to follow into two asp
 * Security considerations and risks of the cloud-native stack.
 * Built-in kubernetes security capabilities and open-source tools.
 
-## Containers - Build, Ship, Run, Connect
+# Container's Journey into Production
 
 The containers are starting their journey into production from the build machine with Dockerfile and application-specific code. The containers are shipped into the container registry after the build. The Kubernetes deployment pulls the containers to run in the cluster. The multiple containers in Kubernetes are then connected with each other and exposed to the network. 
 
+* Build & Ship - Building containers and pushing into the container registry securely.
+* Run - Containers runtime, host security, least privileges, segregation, security
+* Connect - TLS Encryption, Network policy, Services meshes
+
+
 Let us discuss the attack surfaces of the container at each level and the steps to mitigate the risks of the attacks.
 
-### Build
+## Build & Ship
 
 Building container images usually starts with creating Dockerfile from scratch image or pulling base image from another repository. Then some of the application-specific steps added in docker to build the final image.
 
-In this build step, the below container security mechanisms have to do to build the containers securely.
+The questions at the build & ship step...
 
-#### Use Signed Images
+* Are the container images signed and from trusted sources?
+* Are the layers of container images are hardened?
+* Are known problems identified, and how will they be tracked?
+* Are the runtime and operating system layers up to date?
+
+### Use Signed Images
 
 Use the signed images from the developers and repositories you trust. The Docker Content Trust feature provides the ability to use digital signatures for data sent to and received from remote Docker registries. These signatures allow client-side or runtime verification of the integrity and publisher of specific image tags.
 
@@ -34,6 +44,29 @@ export DOCKER_CONTENT_TRUST=1
 docker trust signer add --key cert.pem jeff dtr.example.com/admin/demo
 ```
 
-To learn more about this https://docs.docker.com/engine/security/trust/content_trust/
+To learn more about this refer [Docker content trust](https://docs.docker.com/engine/security/trust/content_trust/) link on docker docs.
 
-Setup a [Docker Trusted Registry (DTR)](https://docs.docker.com/ee/dtr/) for your own team to create an internal library of images your team can use.
+### Container Hardening
+
+Scan and reduce the size of the docker images. Remove unneeded libraries and packages in the container. I'm using the Dive tool to analyze each layer of the docker and inspect the files in the container to reduce the size.
+
+{% github wagoodman/dive no-readme %}
+
+### Linting Dockerfiles
+
+Use docker linter - hadolint to avoid common mistakes and to follow the best practices guidelines on the docker file. Hadolint has even a VSCode extension, linting errors appear while typing. This helps in writing better Dockerfiles faster and follow best practices.
+
+{% github hadolint/hadolint no-readme %}
+
+### Vulnerability Scan
+
+Choose the automated security opensource tools to do static analysis of vulnerabilities and bugs when building containers.
+
+Below are some open-source tools for vulnerability scans.
+
+* Anchore - A tool for inspecting container security using CVE data and user-defined policies
+* Clair - An API-driven static container security analysis with a huge CVE database
+* Dagda - A tool for scanning for vulnerabilities, Trojans, viruses, and malware in Docker containers
+* Sysdig - Falco - Offers behavioral activity monitoring with deep container visibility
+* OpenSCAP - An environment for creating and maintaining security policies for various platforms
+* Notary - A framework for boosting container security with a server for cryptographically delegating responsibility
