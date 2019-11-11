@@ -70,13 +70,19 @@ dive <image_name>
 
 This *k8s-ops-box* comes with necessary dev tools or command line tools that requires kubernetes operations. It has vim editor, jq for JSON parsing, curl for requests, git for version control, unzip/tar for unzipping files and python3/pip installed for basic operations.
 
-### Infrastructure as code - Terraform
+## Infrastructure as code  
+
+### Terraform
 
 Terraform is the infrastructure-as-code tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
-### Package management  - Helm
+## Package management 
+
+### Helm
 
 Helm is a tool that streamlines installing and managing Kubernetes applications. Think of it like apt/yum/homebrew for Kubernetes.
+
+## Monitor
 
 ### Kube Shell
 
