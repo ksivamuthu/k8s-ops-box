@@ -6,9 +6,9 @@ The repository contains three different docker images
 
 * Base - k8s-ops
     * This image contains kubectl, kubeadm, terraform, helm and etc.
-* EKS - k8s-ops:eks
+* EKS - k8s-ops-eks
     * This contains the base tools and AWS CLI to do aws cloud cli operations
-* AKS - k8s-ops:aks
+* AKS - k8s-ops-aks
     * This contains the base tools and Azure CLI to do azure cloud cli operations
 
 ## How to pull image?
