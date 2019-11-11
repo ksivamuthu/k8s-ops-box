@@ -99,3 +99,29 @@ kubebox
 ```
 ![](https://camo.githubusercontent.com/f657bda0847eeaf09459f6d3c045af177f6c6f28/68747470733a2f2f6173746566616e757474692e6769746875622e696f2f6b756265626f782f6b756265626f782e737667)
 
+## Static analysis / Audit tool
+
+### Kube Score
+
+kube-score is a tool that performs static code analysis of your Kubernetes object definitions. The output is a list of recommendations of what you can improve to make your application more secure and resilient.
+
+Checks:
+* Container limits (should be set)
+* Pod is targeted by a NetworkPolicy, both egress and ingress rules are recommended
+* Deployments and StatefulSets should have a PodDisruptionPolicy
+* Deployments and StatefulSets should have host PodAntiAffinity configured
+* Container probes, both readiness and liveness checks should be configured, and should not be identical
+* Container securityContext, run as high number user/group, do not run as root or with privileged root fs
+* Stable APIs, use a stable API if available (supported: Deployments, StatefulSets, DaemonSet)
+
+Example with helm:
+
+```
+helm template my-app | kube-score score -
+```
+
+Static yamls:
+
+```
+kube-score score my-app/*.yaml
+```
