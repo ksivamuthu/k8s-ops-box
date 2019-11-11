@@ -37,3 +37,14 @@ The repository contains three different docker images
 
  docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube -v /YOUR_LOCAL_FOLDER/.aws:/root/.aws docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks:latest
 ```
+
+## Tools
+
+### Kube Shell
+
+An integrated shell for working with the Kubernetes CLI is installed in this *k8s-ops-box* and that's the main entrypoint of the docker image. This kube-shell includes auto completion, fish style command support and other cool features. This is one of the must have tool when you are using lot of kubectl commands to query your cluster.
+
+![](https://camo.githubusercontent.com/6dd81f81976c3abf550dddbed8dcc1fa93d86595/687474703a2f2f692e696d6775722e636f6d2f6466656c6b4b722e676966)
+
+
+
