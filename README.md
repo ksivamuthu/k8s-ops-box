@@ -148,3 +148,8 @@ Please note we have a code of conduct, please follow it in all your interactions
 * Make sure, the new tool we are adding in this kubernetes box is evaluated.
 * Update the README.md with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
 * You may merge the Pull Request in once you have the sign-off of one other developer, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+
+## Credits
+
+Credits goes to these all amazing open source tools that helps this kubernetes development lot easiier. This is just the docker box with all useful tools installed. In future, custom script may be added to this box to enhance our kubernetes ops.
+
