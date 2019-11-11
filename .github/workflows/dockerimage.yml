@@ -11,4 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build base --file base/Dockerfile --tag cei/k8s-ops:$(date +%s)
+      run: docker build base --file base/Dockerfile --tag ksivamuthu/k8s-ops:$(date +%s)
+    - name: Push the Docker image
+      run: docker push ksivamuthu/k8sops:latest:$(date +%s)
