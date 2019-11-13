@@ -17,7 +17,7 @@ jobs:
       with:
         username: "${{ secrets.GITHUB_USERNAME }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
-        image_name: ksivamuthu/cei-k8s-ops/k8s-ops
+        image_name: ksivamuthu/k8s-ops-box/k8s-ops
         image_tag: latest
         registry: docker.pkg.github.com
         context: base
@@ -26,7 +26,7 @@ jobs:
       with:
         username: "${{ secrets.GITHUB_USERNAME }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
-        image_name: ksivamuthu/cei-k8s-ops/k8s-ops-eks
+        image_name: ksivamuthu/k8s-ops-box/k8s-ops-eks
         image_tag: latest
         registry: docker.pkg.github.com
         context: eks
@@ -35,7 +35,7 @@ jobs:
       with:
         username: "${{ secrets.GITHUB_USERNAME }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
-        image_name: ksivamuthu/cei-k8s-ops/k8s-ops-aks
+        image_name: ksivamuthu/k8s-ops-box/k8s-ops-aks
         image_tag: latest
         registry: docker.pkg.github.com
         context: aks
