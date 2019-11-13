@@ -34,9 +34,9 @@ The github package registry contains three different docker images
     
 | Image | URL                                                      | Tag    | Description                                                                  |
 | ----- | -------------------------------------------------------- | ------ | ---------------------------------------------------------------------------- |
-| Base  | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops     | latest | This image contains kubectl, kubeadm, terraform, helm and etc.               |
-| EKS   | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks | latest | This contains the base tools and AWS CLI to do aws cloud cli operations.     |
-| AKS   | docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-aks | latest | This contains the base tools and Azure CLI to do Azure cloud cli operations. |
+| Base  | docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops     | latest | This image contains kubectl, kubeadm, terraform, helm and etc.               |
+| EKS   | docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops-eks | latest | This contains the base tools and AWS CLI to do aws cloud cli operations.     |
+| AKS   | docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops-aks | latest | This contains the base tools and Azure CLI to do Azure cloud cli operations. |
 
 ## How to pull image?
 
@@ -47,7 +47,7 @@ The github package registry contains three different docker images
    ```
 3. Pull the required images.
    ```
-   docker pull docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops:latest
+   docker pull docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops:latest
    ```
 
 ## How to run the image?
@@ -55,14 +55,14 @@ The github package registry contains three different docker images
 1. Run the image with the below command.
 
  ```bash
- docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops:latest
+ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops:latest
  ```
  
 2. If you want to connect with EKS, run the image with the below command
 
 ```bash
 
- docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube -v /YOUR_LOCAL_FOLDER/.aws:/root/.aws docker.pkg.github.com/ksivamuthu/cei-k8s-ops/k8s-ops-eks:latest
+ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /YOUR_LOCAL_FOLDER/.kube:/root/.kube -v /YOUR_LOCAL_FOLDER/.aws:/root/.aws docker.pkg.github.com/ksivamuthu/k8s-ops-box/k8s-ops-eks:latest
 ```
 
 ## Tools
